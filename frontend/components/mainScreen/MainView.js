@@ -20,7 +20,6 @@ export default function MainView() {
                     </View>
                 </View>
                 <View style={{ flex: 1 }}>
-                    {/* <Text style={{ color: 'white' }}>Lottie</Text> */}
                     <LottieView
                         autoPlay
                         source={require('../../assets/lottie/sun.json')}

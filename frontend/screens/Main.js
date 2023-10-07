@@ -4,6 +4,7 @@ import MainView from '../components/mainScreen/MainView';
 import TimeChart from '../components/mainScreen/TimeChart';
 import SunReminder from '../components/mainScreen/SunReminder';
 import Forecast from '../components/mainScreen/Forecast';
+import Cards from '../components/mainScreen/Cards';
 
 export default function Main() {
     return (
@@ -14,15 +15,24 @@ export default function Main() {
             <View style={styles.MainView}>
                 <MainView />
             </View>
-            <View style={styles.TimeChart}>
-                <TimeChart />
+            <View style={styles.SecondView}>
+                <ScrollView>
+                    <View style={styles.TimeChart}>
+                        <TimeChart />
+                    </View>
+                    <View style={styles.SunReminder}>
+                        <SunReminder />
+                    </View>
+                    <View style={styles.Forecast}>
+                        <Forecast />
+                    </View>
+                    <View style={styles.Cards}>
+                        <Cards />
+                    </View>
+                </ScrollView>
             </View>
-            <View style={styles.SunReminder}>
-                <SunReminder />
-            </View>
-            <View style={styles.Forecast}>
-                <Forecast />
-            </View>
+
+
         </View>
     );
 }
@@ -36,13 +46,20 @@ const styles = StyleSheet.create({
         gap: 5,
         padding: 15
     },
+    SecondView: {
+        flex: 5.8,
+        backgroundColor: '#7EB0EF',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        padding: 3,
+
+    },
     Header: {
         flex: 0.75,
         width: '100%',
     },
     MainView: {
         flex: 3,
-        // backgroundColor: 'red',
         width: '100%',
         marginBottom: 30
     },
@@ -51,20 +68,36 @@ const styles = StyleSheet.create({
         backgroundColor: '#62A1EE',
         width: '100%',
         borderRadius: 25,
-        padding: 15
+        padding: 15,
+        columnGap: 5
     },
     SunReminder: {
-        marginTop: 5,
         flex: 1.3,
+        marginTop: 5,
         backgroundColor: '#62A1EE',
         width: '100%',
-        borderRadius: 25
+        borderRadius: 25,
+        columnGap: 5,
+        marginTop: 10,
+        padding: 20
     },
     Forecast: {
         flex: 2,
         backgroundColor: '#62A1EE',
         width: '100%',
         borderRadius: 25,
-        padding: 10
+        padding: 10,
+        columnGap: 5,
+        marginTop: 10
+    },
+    Cards: {
+        flex: 1.2,
+        backgroundColor: '#62A1EE',
+        width: '100%',
+        borderRadius: 25,
+        padding: 10,
+        marginTop: 10
+
     }
+
 });

@@ -5,54 +5,78 @@ export default function TimeChart() {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }} > Generally clear. Highs 33 to 55 and lows 18 to 20.</Text>
+                <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }} > Generally clear. Highs 33° to 35° and lows 18° to 20°.</Text>
             </View>
             <ScrollView horizontal={true} >
                 <View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View>
                 <View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11.30</Text>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
                     <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
+                </View><View style={styles.dayForecastItem}>
+                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
+                    <Icon name="sun" size={25} color="orange" />
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View>
 
             </ScrollView>
@@ -68,7 +92,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         padding: 5,
         alignItems: 'center',
-        gap: 5
+        gap: 10
     }
 
 
