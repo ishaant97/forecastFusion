@@ -5,6 +5,7 @@ import TimeChart from '../components/mainScreen/TimeChart';
 import SunReminder from '../components/mainScreen/SunReminder';
 import Forecast from '../components/mainScreen/Forecast';
 import Cards from '../components/mainScreen/Cards';
+import AdditionalInfo from '../components/mainScreen/AdditionalInfo';
 
 export default function Main() {
     return (
@@ -28,6 +29,9 @@ export default function Main() {
                     </View>
                     <View style={styles.Cards}>
                         <Cards />
+                    </View>
+                    <View style={styles.AdditionalInfo}>
+                        <AdditionalInfo />
                     </View>
                 </ScrollView>
             </View>
@@ -98,6 +102,14 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10
 
+    },
+    AdditionalInfo: {
+        flex: 0.8,
+        backgroundColor: '#62A1EE',
+        width: '100%',
+        marginTop: 10,
+        padding: 10,
+        borderRadius: 25
     }
 
 });
