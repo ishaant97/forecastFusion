@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/AntDesign';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export default function AdditionalInfo() {
     return (
         <View style={styles.container}>
             <View style={styles.Informations}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Icon name="flower-pollen-outline" size={25} color="grey" />
+                    <Icon name="flower-pollen-outline" size={25} color="black" />
                     <Text>Polen</Text>
                 </View>
                 <View>
@@ -16,7 +18,7 @@ export default function AdditionalInfo() {
             </View>
             <View style={styles.Informations}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Icon2 name="API" size={25} color="grey" />
+                    <Icon2 name="API" size={25} color="black" />
                     <Text>AQI</Text>
                 </View>
                 <View>
@@ -24,7 +26,8 @@ export default function AdditionalInfo() {
                 </View>
             </View>
             <View style={styles.Informations}>
-                <View>
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                    <FontAwesome5 name="running" size={24} color="black" />
                     <Text>Running</Text>
                 </View>
                 <View>
@@ -32,7 +35,8 @@ export default function AdditionalInfo() {
                 </View>
             </View>
             <View style={styles.Informations}>
-                <View>
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                    <FontAwesome5 name="car" size={24} color="black" />
                     <Text>Driving difficulty</Text>
                 </View>
                 <View>

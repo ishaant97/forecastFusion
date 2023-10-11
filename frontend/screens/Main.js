@@ -6,6 +6,7 @@ import SunReminder from '../components/mainScreen/SunReminder';
 import Forecast from '../components/mainScreen/Forecast';
 import Cards from '../components/mainScreen/Cards';
 import AdditionalInfo from '../components/mainScreen/AdditionalInfo';
+// import DrawerNavigator from './DrawerNavigator';
 
 export default function Main() {
     return (
@@ -35,8 +36,6 @@ export default function Main() {
                     </View>
                 </ScrollView>
             </View>
-
-
         </View>
     );
 }

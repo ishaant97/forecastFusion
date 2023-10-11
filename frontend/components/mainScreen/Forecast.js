@@ -5,7 +5,7 @@ import Icon2 from 'react-native-vector-icons/Feather';
 
 export default function Forecast() {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 7 }}>
                 <View>
                     <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Today</Text>
@@ -102,7 +102,7 @@ export default function Forecast() {
                     <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>23°</Text>
                 </View>
             </View>
-        </ScrollView>
+        </View>
     );
 }
 

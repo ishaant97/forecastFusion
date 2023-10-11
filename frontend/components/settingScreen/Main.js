@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function Header() {
+export default function Main() {
     return (
         <View style={styles.container}>
             <View style={styles.menu}>

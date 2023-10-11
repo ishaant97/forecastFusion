@@ -2,17 +2,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function Header() {
+export default function DrawerHeader() {
     return (
         <View style={styles.container}>
-            <View style={styles.menu}>
-                <TouchableOpacity>
-                    <Text style={{ margin: 15, color: 'white' }}><Ionicons name="md-menu" size={30} color="white" /></Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.location}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 25 }}>Phagwara</Text>
-            </View>
+            <Text>DrawerYOYO</Text>
         </View>
     );
 }
@@ -21,6 +14,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
+        backgroundColor: 'red'
     },
     menu: {
         flex: 1,

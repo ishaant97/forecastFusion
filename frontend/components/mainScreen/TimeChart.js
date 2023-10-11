@@ -78,7 +78,6 @@ export default function TimeChart() {
                     <Icon name="sun" size={25} color="orange" />
                     <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
                 </View>
-
             </ScrollView>
         </View >
     );

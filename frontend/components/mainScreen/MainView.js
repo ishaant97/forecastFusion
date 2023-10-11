@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         margin: 20,
         // backgroundColor: 'blue',
-        height: '77%'
+        height: '75%'
     }
 });

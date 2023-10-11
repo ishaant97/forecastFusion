@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';;
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon3 from 'react-native-vector-icons/Feather';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 export default function Cards() {
@@ -14,7 +14,7 @@ export default function Cards() {
                     <Text>Low</Text>
                 </View>
                 <View style={styles.cards}>
-                    <Icon2 name="air-humidifier" size={20} color="orange" />
+                    <MaterialCommunityIcons name="water-percent" size={40} color="lightblue" />
                     <Text>Humidity</Text>
                     <Text>74%</Text>
                 </View>
