@@ -1,13 +1,32 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import DrawerNavigator from './DrawerNavigator';
+import { createStackNavigator } from '@react-navigation/stack';
+import Splash from './Splash';
+import Main from './Main';
+import Setting from './Setting';
 
-
+const Stack = createStackNavigator();
 
 export default function AppNavigator() {
     return (
         <NavigationContainer>
-            <DrawerNavigator />
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='Splash'
+                    component={Splash}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name='Main'
+                    component={Main}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name='Setting'
+                    component={Setting}
+                    options={{ headerShown: false }}
+                />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }

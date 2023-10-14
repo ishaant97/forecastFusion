@@ -6,13 +6,14 @@ import SunReminder from '../components/mainScreen/SunReminder';
 import Forecast from '../components/mainScreen/Forecast';
 import Cards from '../components/mainScreen/Cards';
 import AdditionalInfo from '../components/mainScreen/AdditionalInfo';
-// import DrawerNavigator from './DrawerNavigator';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Main() {
+
+export default function Main({ navigation }) {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.Header} >
-                <Header />
+                <Header navigation={navigation} />
             </View>
             <View style={styles.MainView}>
                 <MainView />
@@ -36,7 +37,7 @@ export default function Main() {
                     </View>
                 </ScrollView>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         // justifyContent: 'center',
         padding: 3,
-
     },
     Header: {
         flex: 0.75,

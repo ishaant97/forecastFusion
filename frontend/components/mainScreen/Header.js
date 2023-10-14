@@ -1,17 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
 
-export default function Header() {
+export default function Header({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={styles.menu}>
-                <TouchableOpacity>
-                    <Text style={{ margin: 15, color: 'white' }}><Ionicons name="md-menu" size={30} color="white" /></Text>
-                </TouchableOpacity>
+            <View style={styles.Name}>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 25 }}>ForecastFusion</Text>
             </View>
-            <View style={styles.location}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 25 }}>Phagwara</Text>
+            <View style={styles.Setting}>
+                <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
+                    <Text style={{ margin: 15, color: 'white' }}><SimpleLineIcons name="settings" size={24} color="white" /></Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -22,15 +22,14 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
     },
-    menu: {
+    Name: {
         flex: 1,
         alignItems: 'flex-start',
         justifyContent: 'center',
     },
-    location: {
+    Setting: {
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'center',
-        margin: 15,
-    }
+    },
 });
