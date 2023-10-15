@@ -7,6 +7,9 @@ export default function TimeChart() {
             <View>
                 <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }} > Generally clear. Highs 33° to 35° and lows 18° to 20°.</Text>
             </View>
+            {/* <Text numberOfLines={1} style={{ color: '#5E618E' }}>
+                _________________________________________________
+            </Text> */}
             <ScrollView horizontal={true} >
                 <View style={styles.dayForecastItem}>
                     <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>

@@ -1,17 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import AppNavigator from './screens/AppNavigator';
+import { LocationProvider } from './context/Location';
 
 export default function App() {
   return (
     <>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        {/* <Main /> */}
-        <AppNavigator />
-      </View>
+      <LocationProvider>
+        <View style={styles.container}>
+          <StatusBar style="auto" />
+          <AppNavigator />
+        </View>
+      </LocationProvider>
     </>
-
   );
 }
 
