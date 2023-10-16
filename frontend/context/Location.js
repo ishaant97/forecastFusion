@@ -27,11 +27,11 @@ const LocationProvider = ({ children }) => {
 
         const options = {
             method: 'GET',
-            url: 'https://weatherapi-com.p.rapidapi.com/current.json',
+            url: process.env.EXPO_PUBLIC_API_URL,
             params: { q: `${location.coords.latitude},${location.coords.longitude}` },
             headers: {
-                'X-RapidAPI-Key': '3962322a1amshbf868885feddf98p100253jsnc699c8ec37ff',
-                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                'X-RapidAPI-Key': process.env.EXPO_PUBLIC_API_KEY,
+                'X-RapidAPI-Host': process.env.EXPO_PUBLIC_API_HOST
             }
         };
 

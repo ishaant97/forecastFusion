@@ -13,6 +13,11 @@ export default function Cards() {
     const [windSpeed, setWindSpeed] = useState(null);
     const [uv, setUv] = useState(null);
     const [uvStatus, setUvStatus] = useState(null);
+    const [sunRise, setSunRise] = useState(null);
+    const [sunSet, setSunSet] = useState(null);
+    const [moonRise, setMoonRise] = useState(null);
+    const [moonSet, setMoonSet] = useState(null);
+    const [moonPhase, setMoonPhase] = useState(null);
 
     useEffect(() => {
         getInfo();
@@ -27,14 +32,14 @@ export default function Cards() {
         // getLocation();
         const options = {
             method: 'GET',
-            url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
+            url: process.env.EXPO_PUBLIC_API_URL,
             params: {
                 q: `${location}`,
                 days: '3'
             },
             headers: {
-                'X-RapidAPI-Key': '3962322a1amshbf868885feddf98p100253jsnc699c8ec37ff',
-                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                'X-RapidAPI-Key': process.env.EXPO_PUBLIC_API_KEY,
+                'X-RapidAPI-Host': process.env.EXPO_PUBLIC_API_HOST
             }
         };
 
@@ -45,7 +50,11 @@ export default function Cards() {
             setWindSpeed(roundOff(response.data.current.wind_kph));
             setUv(response.data.current.uv);
             getUVStatus();
-
+            setSunRise(response.data.forecast.forecastday[0].astro.sunrise);
+            setSunSet(response.data.forecast.forecastday[0].astro.sunset);
+            setMoonRise(response.data.forecast.forecastday[0].astro.moonrise);
+            setMoonSet(response.data.forecast.forecastday[0].astro.moonset);
+            setMoonPhase(response.data.forecast.forecastday[0].astro.moon_phase);
         } catch (error) {
             console.error(error);
         }
@@ -90,26 +99,31 @@ export default function Cards() {
                 <View style={styles.cards}>
                     <Icon3 name="sunrise" size={20} color="grey" />
                     <Text>Moon Phase</Text>
+                    <Text>{moonPhase}</Text>
                 </View>
             </View>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View style={styles.cards}>
                     <Icon3 name="sunrise" size={20} color="grey" />
                     <Text>Sunrise</Text>
+                    <Text>{sunRise}</Text>
                 </View>
                 <View style={styles.cards}>
                     <Icon3 name="sunset" size={20} color="grey" />
-                    <Text>Sunrise</Text>
+                    <Text>Sunset</Text>
+                    <Text>{sunSet}</Text>
                 </View>
             </View>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View style={styles.cards}>
                     <Icon3 name="sunrise" size={20} color="grey" />
                     <Text>MoonRise</Text>
+                    <Text>{moonRise}</Text>
                 </View>
                 <View style={styles.cards}>
                     <Icon3 name="sunset" size={20} color="grey" />
                     <Text>MoonSet</Text>
+                    <Text>{moonSet}</Text>
                 </View>
             </View>
         </View>
@@ -129,7 +143,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 20,
         width: '45%',
-        height: '90%'
+        height: '95%'
 
     },
     additionalStyles: {
