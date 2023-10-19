@@ -20,16 +20,19 @@ export default function Header({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: 'transparent',
         flexDirection: 'row',
     },
     Name: {
         flex: 1,
         alignItems: 'flex-start',
+        backgroundColor: 'transparent',
         justifyContent: 'center',
     },
     Setting: {
         flex: 1,
         alignItems: 'flex-end',
+        backgroundColor: 'transparent',
         justifyContent: 'center',
     },
 });

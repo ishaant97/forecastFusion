@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Header from '../components/mainScreen/Header';
 import MainView from '../components/mainScreen/MainView';
 import TimeChart from '../components/mainScreen/TimeChart';
@@ -52,19 +52,21 @@ const styles = StyleSheet.create({
     },
     SecondView: {
         flex: 5.8,
-        backgroundColor: '#7EB0EF',
+        // backgroundColor: '#7EB0EF',
         // alignItems: 'center',
         // justifyContent: 'center',
         padding: 3,
     },
     Header: {
         flex: 0.75,
+        backgroundColor: 'transparent',
         width: '100%',
     },
     MainView: {
         flex: 3,
         width: '100%',
-        marginBottom: 30
+        backgroundColor: 'transparent',
+        marginBottom: 30,
     },
     TimeChart: {
         flex: 2.5,
