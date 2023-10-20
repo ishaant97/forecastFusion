@@ -10,33 +10,30 @@ const Stack = createStackNavigator();
 
 export default function AppNavigator() {
     return (
-        <View style={styles.container}>
-            <NavigationContainer>
-                <Stack.Navigator>
-                    <Stack.Screen
-                        name='Splash'
-                        component={Splash}
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                        name='Main'
-                        component={Main}
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                        name='Setting'
-                        component={Setting}
-                        options={{ headerShown: false }}
-                    />
-                </Stack.Navigator>
-            </NavigationContainer>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='Splash'
+                    component={Splash}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name='Main'
+                    component={Main}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name='Setting'
+                    component={Setting}
+                    options={{ headerShown: false }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'transparent'
     },
 });
