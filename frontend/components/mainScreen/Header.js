@@ -20,19 +20,24 @@ export default function Header({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
         flexDirection: 'row',
     },
     Name: {
         flex: 1,
         alignItems: 'flex-start',
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
         justifyContent: 'center',
     },
     Setting: {
         flex: 1,
         alignItems: 'flex-end',
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
         justifyContent: 'center',
     },
+    Location: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 });

@@ -1,86 +1,69 @@
-import { StyleSheet, ScrollView, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, Image, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import data from '../../data';
+import { useContext, useEffect, useState } from 'react';
+import { LocationContext } from '../../context/Location';
+import axios from 'axios';
+
+const newComponent = (array) => {
+    const roundOff = (num) => {
+        return Math.round(num);
+    }
+    return (
+        array.forecast.forecastday[0].hour.map((item, index) => {
+            const datetimeString = item.time;
+            const timePart = datetimeString.split(' ')[1];
+
+            return (
+                <View style={styles.dayForecastItem} key={index}>
+                    {/* <Icon name="sun" size={25} color="orange" /> */}
+                    <Image source={{ uri: item.condition.icon }} />
+                    <Text style={{ color: 'white', fontSize: 13 }}>{timePart}</Text>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>{roundOff(item.temp_c)}°</Text>
+                </View>
+            )
+        })
+    )
+}
 
 export default function TimeChart() {
+    const { location } = useContext(LocationContext);
+    const [array, setArray] = useState(null);
+
+    useEffect(() => {
+        getInfo();
+    }, []
+    )
+
+    const getInfo = async () => {
+        // getLocation();
+        const options = {
+            method: 'GET',
+            url: process.env.EXPO_PUBLIC_API_URL,
+            params: {
+                q: `${location}`,
+                days: '3'
+            },
+            headers: {
+                'X-RapidAPI-Key': process.env.EXPO_PUBLIC_API_KEY,
+                'X-RapidAPI-Host': process.env.EXPO_PUBLIC_API_HOST
+            }
+        };
+
+        try {
+            const response = await axios.request(options);
+            // console.log(response.data);
+            setArray(response.data);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }} > Generally clear. Highs 33° to 35° and lows 18° to 20°.</Text>
-            </View>
-            {/* <Text numberOfLines={1} style={{ color: '#5E618E' }}>
-                _________________________________________________
-            </Text> */}
-            <ScrollView horizontal={true} >
-                <View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View>
-                <View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View><View style={styles.dayForecastItem}>
-                    <Text style={{ color: 'white', fontSize: 13 }}>11:30</Text>
-                    <Icon name="sun" size={25} color="orange" />
-                    <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>30°</Text>
-                </View>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+                {array ? newComponent(array) : <Text>Loading...</Text>}
             </ScrollView>
         </View >
     );
@@ -91,11 +74,12 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     dayForecastItem: {
-        marginTop: 15,
-        padding: 5,
+        backgroundColor: '#6a8488',
+        // marginTop: 15,
+        padding: 8,
         alignItems: 'center',
-        gap: 10
+        gap: 10,
+        borderRadius: 18,
+        marginRight: 15
     }
-
-
 });

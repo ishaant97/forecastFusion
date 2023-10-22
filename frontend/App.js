@@ -2,8 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import AppNavigator from './screens/AppNavigator';
 import { LocationProvider } from './context/Location';
-import { Image } from 'expo-image';
-import { Text } from 'react-native';
 
 export default function App() {
   return (
@@ -25,6 +23,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent'
+    // backgroundColor: 'transparent'
   },
 });
