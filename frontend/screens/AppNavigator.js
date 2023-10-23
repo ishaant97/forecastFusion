@@ -5,6 +5,7 @@ import Splash from './Splash';
 import Main from './Main';
 import Setting from './Setting';
 import { View } from 'react-native';
+import Second from './Second';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,11 @@ export default function AppNavigator() {
                 <Stack.Screen
                     name='Main'
                     component={Main}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name='Second'
+                    component={Second}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen

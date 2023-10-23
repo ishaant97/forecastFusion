@@ -1,9 +1,9 @@
 import { StyleSheet, ScrollView, Image, Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-import data from '../../data';
 import { useContext, useEffect, useState } from 'react';
 import { LocationContext } from '../../context/Location';
 import axios from 'axios';
+import LottieView from 'lottie-react-native';
+
 
 const newComponent = (array) => {
     const roundOff = (num) => {
@@ -13,11 +13,9 @@ const newComponent = (array) => {
         array.forecast.forecastday[0].hour.map((item, index) => {
             const datetimeString = item.time;
             const timePart = datetimeString.split(' ')[1];
-
             return (
                 <View style={styles.dayForecastItem} key={index}>
-                    {/* <Icon name="sun" size={25} color="orange" /> */}
-                    <Image source={{ uri: item.condition.icon }} />
+                    <Image source={{ uri: 'https:' + item.condition.icon }} style={{ width: 40, height: 40 }} />
                     <Text style={{ color: 'white', fontSize: 13 }}>{timePart}</Text>
                     <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>{roundOff(item.temp_c)}°</Text>
                 </View>
@@ -29,6 +27,7 @@ const newComponent = (array) => {
 export default function TimeChart() {
     const { location } = useContext(LocationContext);
     const [array, setArray] = useState(null);
+    const [image, setImage] = useState(null);
 
     useEffect(() => {
         getInfo();
@@ -54,6 +53,7 @@ export default function TimeChart() {
             const response = await axios.request(options);
             // console.log(response.data);
             setArray(response.data);
+            // setImage(response.data.forecast.forecastday[0].hour[0].condition.icon);
 
         } catch (error) {
             console.error(error);
@@ -63,7 +63,14 @@ export default function TimeChart() {
     return (
         <View style={styles.container}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
-                {array ? newComponent(array) : <Text>Loading...</Text>}
+                {array ? newComponent(array) :
+                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                        <LottieView
+                            style={{ width: 325 }}
+                            autoPlay
+                            source={require('../../assets/lottie/loadingTimeChart.json')}
+                        />
+                    </View>}
             </ScrollView>
         </View >
     );
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
         // marginTop: 15,
         padding: 8,
         alignItems: 'center',
-        gap: 10,
+        gap: 7,
         borderRadius: 18,
         marginRight: 15
     }

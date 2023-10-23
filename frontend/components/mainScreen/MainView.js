@@ -1,5 +1,4 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo';
 import LottieView from 'lottie-react-native';
 import { useContext, useEffect, useState } from 'react';
 import { LocationContext } from '../../context/Location';
@@ -7,8 +6,9 @@ import axios from 'axios';
 import { EvilIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
 
-export default function MainView() {
+export default function MainView({ navigation }) {
     const { location } = useContext(LocationContext);
     // const [location, setLocation] = useState(null);
     const [temp, setTemp] = useState(null);
@@ -114,15 +114,21 @@ export default function MainView() {
                     <View style={{ alignItems: 'center' }}>
                         <Text style={{ fontSize: 85, color: 'white', fontWeight: '500' }}>{temp}°</Text>
                     </View>
-                    <View style={{ alignItems: 'flex-start', marginTop: 20 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
                         {/* <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', paddingTop: 15 }}>{location}<Icon name="location-pin" size={20} color="#fff" /></Text> */}
-                        <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
-                            {status}
-                        </Text>
-                        <Text style={{ color: 'white', fontSize: 18 }}>{maxTemp}°/{minTemp}° Feels like {feelsLike}°</Text>
+                        <View>
+                            <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
+                                {status}
+                            </Text>
+                            <Text style={{ color: 'white', fontSize: 18 }}>{maxTemp}°/{minTemp}° Feels like {feelsLike}°</Text>
+                        </View>
+                        <View style={{ justifyContent: 'flex-end', borderRadius: 10 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Second')}>
+                                <MaterialIcons name="arrow-forward-ios" size={30} color="white" />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
-
             </View>
         </View>
     );

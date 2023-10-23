@@ -111,7 +111,7 @@ export default function SunReminder() {
         }
         // If neither sunrise nor sunset has occurred yet, assume sunrise is next
         else {
-            setWord("Sunrisee");
+            setWord("Sunriseee");
             setDisplaySun(`Sunrise will be at ${sunRise}`);
         }
     }

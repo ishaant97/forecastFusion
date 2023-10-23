@@ -15,7 +15,7 @@ export default function Main({ navigation }) {
                     <Header navigation={navigation} />
                 </View>
                 <View style={styles.MainView}>
-                    <MainView />
+                    <MainView navigation={navigation} />
                 </View>
                 <View style={styles.AdditionalInfo}>
                     <AdditionalInfo />
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
         width: '100%',
         marginTop: 15,
         padding: 10,
-        borderRadius: 25
+        borderRadius: 25,
+        // marginRight: 60
     },
     TimeChart: {
         flex: 2,
