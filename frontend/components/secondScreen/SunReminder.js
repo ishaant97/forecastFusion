@@ -93,32 +93,36 @@ export default function SunReminder() {
 
 
     function displaySunriseOrSunset() {
+        if (sunRise === null || sunSet === null) {
+            // Handle the case when data is not yet available
+            return;
+        }
         // Get the current time
         const currentTime = getCurrentMilitaryTime();
         // const currentTime = 1752;
 
         // Check if the current time is before sunrise
         if (currentTime < sunRiseInMilitaryTime) {
-            setWord("Sunrise");
+            setWord("Rise and Shine");
             setDisplaySun(`Sunrise will be at ${sunRise}`);
             // console.warn(sunRiseInMilitaryTime);
         }
         // Check if the current time is before sunset
         else if (currentTime < sunSetInMilitaryTime) {
-            setWord("Sunset");
+            setWord("Dont't miss the Sunset");
             setDisplaySun(`Sunset will be at ${sunSet}`);
             // console.warn(sunRiseInMilitaryTime);
         }
         // If neither sunrise nor sunset has occurred yet, assume sunrise is next
         else {
-            setWord("Sunriseee");
+            setWord("Rise and Shinee");
             setDisplaySun(`Sunrise will be at ${sunRise}`);
         }
     }
 
     return (
         <View style={styles.container}>
-            <Text style={{ color: "white", fontSize: 18, fontWeight: 'bold' }}>Don't miss the {word}</Text>
+            <Text style={{ color: "white", fontSize: 18, fontWeight: 'bold' }}>{word}</Text>
             <Text style={{ color: "white", fontSize: 14 }}>{displaySun}</Text>
         </View>
     );

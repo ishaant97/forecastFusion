@@ -80,10 +80,11 @@ const styles = StyleSheet.create({
     Cards: {
         flex: 1.2,
         // backgroundColor: '#62A1EE',
-        backgroundColor: '#385a60',
+        // backgroundColor: '#385a60',
+        backgroundColor: 'transparent',
         width: '100%',
         borderRadius: 25,
-        padding: 10,
+        // padding: 10,
         marginTop: 10
 
     },
