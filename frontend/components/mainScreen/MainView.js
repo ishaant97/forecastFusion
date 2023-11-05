@@ -52,15 +52,15 @@ export default function MainView({ navigation }) {
         // getLocation();
         const options = {
             method: 'GET',
-            url: process.env.EXPO_PUBLIC_API_URL,
-            params: {
-                q: `${location}`,
-                days: '3'
-            },
-            headers: {
-                'X-RapidAPI-Key': process.env.EXPO_PUBLIC_API_KEY,
-                'X-RapidAPI-Host': process.env.EXPO_PUBLIC_API_HOST
-            }
+            url: `http://192.168.132.247:8000/get/forecast/${location}`,
+            // params: {
+            //     q: `${location}`,
+            //     days: '3'
+            // },
+            // headers: {
+            //     'X-RapidAPI-Key': process.env.EXPO_PUBLIC_API_KEY,
+            //     'X-RapidAPI-Host': process.env.EXPO_PUBLIC_API_HOST
+            // }
         };
 
         try {
