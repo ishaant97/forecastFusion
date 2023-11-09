@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+// import { TouchableHighlight } from 'react-native-gesture-handler';
 
 
 export default function SettingHeader({ navigation }) {

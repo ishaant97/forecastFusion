@@ -1,13 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';;
-// import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon3 from 'react-native-vector-icons/Feather';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useContext, useEffect, useState } from 'react';
 import { LocationContext } from '../../context/Location';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 

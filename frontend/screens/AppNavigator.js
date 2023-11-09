@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Splash from './Splash';
 import Main from './Main';
 import Setting from './Setting';
-import { View } from 'react-native';
 import Second from './Second';
 
 const Stack = createStackNavigator();

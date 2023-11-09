@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon2 from 'react-native-vector-icons/Feather';
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import Icon2 from 'react-native-vector-icons/Feather';
 import { Ionicons } from '@expo/vector-icons';
 import { useContext, useEffect, useState } from 'react';
 import { LocationContext } from '../../context/Location';

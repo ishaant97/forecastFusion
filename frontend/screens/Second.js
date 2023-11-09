@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, View } from 'react-native';
 import SunReminder from '../components/secondScreen/SunReminder';
 import Forecast from '../components/secondScreen/Forecast';
 import Cards from '../components/secondScreen/Cards';

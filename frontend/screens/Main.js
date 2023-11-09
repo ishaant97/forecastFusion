@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import Header from '../components/mainScreen/Header';
 import MainView from '../components/mainScreen/MainView';
 import TimeChart from '../components/mainScreen/TimeChart';

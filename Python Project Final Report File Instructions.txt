@@ -1,0 +1,18 @@
+Page 1 Ttile page (lpu Logo)
+Page 2 Certificate page
+Page 3 declaration page
+Page 4 Table of content
+Abstract(is the mirror of the project) - 150 to 200 words
+Introduction - 150 to 200 words
+Problem statement - 50 to 60 words
+Problem statement solution approach - 150 to 200 words
+Methdology - more than 300 words
+Result and analysis - more than 300 words
+Conclusion
+References
+
+
+Heading should be in 12 size
+and explanation should be in 11 size
+
+Okay Now listen I have created a project "Weather App name (Forecast Fusion)" so now I am making the final report for it and you have to help me for it, so let me how explain you the project a little bit, firstly it is a mobile app in which I have used react native for the frontend and fastapi for the backend, as you launch the app  first it will take the permission of the users current location as the user allows it, it will send the latitude and the longitude to the backend where the first api call will be made and the api will return the city of the user then the second api call will be made from the backend this api will return all the weather data of the city in which the user is now, and then the data is passed to the frontend for displaying it. Also, my backend is deployed on microsoft azure

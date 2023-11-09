@@ -52,7 +52,7 @@ export default function MainView({ navigation }) {
         // getLocation();
         const options = {
             method: 'GET',
-            url: `http://192.168.132.247:8000/get/forecast/${location}`,
+            url: `http://192.168.180.247:8000/get/forecast/${location}`,
             // params: {
             //     q: `${location}`,
             //     days: '3'
